@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HelixK1.UIAuhtorizePage"
+    BackgroundColor="{StaticResource BackgroundColor}">
+    <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="AUTO" />
+            </Grid.RowDefinitions>
+
+        <!--  header background  -->
+         <BoxView Grid.Row="0" Color="Black"  Opacity="0.9"/>
+        <Image Grid.Row="0" 
+            Source="HelixAlphaWhite.png"  
+            Scale="0.4" 
+            TranslationY="-20" />        
+       
+        
+         <!--  header ProfilePic  -->
+        <Image Grid.Row="1" HeightRequest="100" 
+                HorizontalOptions="Center" 
+                Source="ProfilePicG.png" 
+                TranslationY="-50" 
+                VerticalOptions="End" 
+                WidthRequest="100"
+                Opacity="1"
+
+        />
+      
+        <!-- Sub Title  -->
+            <StackLayout Grid.Row="2" Padding="0,50,0,05" HorizontalOptions="Center">
+                <Label Style="{StaticResource ProfileNameLabel}" Text="" />
+            </StackLayout>
+
+
+        <!-- action button  -->
+
+            
+         <Button Grid.Row="3" Margin="20" Style="{StaticResource ActionButton}" 
+        Text="Authorize Trust!"
+        Command="{Binding K1NewUserButtonCommand}" CommandParameter="this is a qr parameter"/>
+           </Grid>
+</ContentPage>

@@ -1,32 +1,57 @@
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
+using Xamvvm;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace HelixK1
 {
-	public partial class App : Application
-	{
-		public App ()
-		{
-			InitializeComponent();
+    public partial class App : Application
+    {
 
-			MainPage = new MainPage();
-		}
+        //public bool ShowWelcome
+        //{
+        //    get => Settings.ShowWelcome;
+        //    set
+        //    {
+        //        if (Settings.ShowWelcome == value)
+        //            return;
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+        //        Settings.ShowWelcome = value;
+        //        OnPropertyChanged(nameof(Settings.ShowWelcome));
+        //    }
+        //}
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+        public App()
+        {
+            InitializeComponent();
+            var factory = new XamvvmFormsFactory(this);
+            //if (ShowWelcome == true)
+            //{
+            //    factory.RegisterNavigationPage<MainNavigationPageModel>(
+            //        () => this.GetPageFromCache<UIWelcomePageModel>());
+            //}
+            //else
+            //{
+            //    factory.RegisterNavigationPage<MainNavigationPageModel>(
+            //        () => this.GetPageFromCache<MainPageModel>());
+            //}
+            factory.RegisterNavigationPage<MainNavigationPageModel>(
+                () => this.GetPageFromCache<UIWelcomePageModel>());
+            XamvvmCore.SetCurrentFactory(factory);
+            MainPage = this.GetPageFromCache<MainNavigationPageModel>() as NavigationPage;
+        }
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
+
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+    }
 }

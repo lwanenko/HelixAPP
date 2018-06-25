@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+    x:Class="HelixK1.UIWelcomePage" 
+    BackgroundColor="{StaticResource BackgroundColor}">
+    <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="AUTO" />
+            </Grid.RowDefinitions>
+
+        <!--  header background  -->
+         <BoxView Grid.Row="0" Color="Black"  Opacity="0.9"/>
+        <Image Grid.Row="0" 
+            Source="HelixAlphaWhite.png"  
+            Scale="0.4" 
+            TranslationY="-20" />        
+         <!--  header ProfilePic  -->
+        <Image Grid.Row="1" HeightRequest="100" 
+                HorizontalOptions="Center" 
+                Source="ProfilePicG.png" 
+                TranslationY="-50" 
+                VerticalOptions="End" 
+                WidthRequest="100"
+                Opacity="1"
+
+        />
+      <controls:CarouselViewControl 
+              Grid.Row="2" 
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
+              AnimateTransition="true"
+              IndicatorsShape="Circle"
+              InterPageSpacing="10"
+              BackgroundColor="White"
+             
+              Orientation="Horizontal"
+              ShowIndicators="true">
+            <controls:CarouselViewControl.ItemsSource>
+               <x:Array Type="{x:Type View}">
+                    <Image Source="Steps1.png" HorizontalOptions="CenterAndExpand"  />
+                    <Image Source="Steps2.png" HorizontalOptions="CenterAndExpand" />
+                    <Image Source="Steps3.png" HorizontalOptions="CenterAndExpand" />
+                    <Image Source="Steps4.png" HorizontalOptions="CenterAndExpand" />
+               </x:Array>
+            </controls:CarouselViewControl.ItemsSource>
+         </controls:CarouselViewControl>
+        <!-- Sub Title  -->
+            <StackLayout Grid.Row="1" Padding="0,50,0,05" HorizontalOptions="Center">
+                <Label Style="{StaticResource ProfileNameLabel}" Text="Get your HELIX ALPHA Account" />
+            </StackLayout>
+        <Button Grid.Row="3" Margin="20,0,20,5"  Style="{StaticResource ActionButton}" 
+        Text="Start!" 
+        Command="{Binding UIStartCommand}" CommandParameter="this is a qr parameter"/>
+    </Grid>
+</ContentPage>

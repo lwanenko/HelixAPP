@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelixK1.DeveloperPage">
+	<ContentPage.Content>
+       <ScrollView> 
+          <StackLayout>
+            <Label Text="QR Scan:"/>
+            <Button Text="Do Scan!" Command="{Binding QRScanButtonCommand}" CommandParameter="this is a qr parameter"/>
+            <Label Text="Nethereum:"/>
+            <Button Text="Netherium Tasks" Command="{Binding NetherCommand}" CommandParameter="this is a Nether parameter"/>    
+            <Label Text="REST:"/>
+            <Button Text="Connect to Server!" Command="{Binding RestButtonCommand}" CommandParameter="this is a rest parameter"/>
+            <Label Text="Nethereum:"/>
+            <Button Text="Netherium Tasks" Command="{Binding NetherCommand}" CommandParameter="this is a Nether parameter"/>
+            <Label Text="TestPage:"/>
+            <Button Text="GoTo Test Page" Command="{Binding TestButtonCommand}" CommandParameter="this is a test parameter"/>
+            <Label Text="Test REST:"/>
+            <Button Text="Connect to Test Server!" Command="{Binding TestRestButtonCommand}" CommandParameter="this is a rest parameter"/>
+            <Label Text="Settings:"/>
+            <Button Text="View Key Values!" Command="{Binding SettingsButtonCommand}" CommandParameter="this is a Settings parameter"/>    
+         </StackLayout>
+       </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

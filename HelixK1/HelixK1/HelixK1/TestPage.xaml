@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HelixK1.TestPage"
+    Title="{Binding Title}">
+	<ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="WelcomeText" Text="{Binding WelcomeText}" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Button Text="Back" Command="{Binding BackButtonCommand}" CommandParameter="this is a parameter"/>
+            <Button Text="Change Text" Command="{Binding ChangeTextButtonCommand}" CommandParameter="this is a parameter"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

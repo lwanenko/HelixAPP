@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HelixK1.NetherPage"
+    Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding WelcomeText}" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label Text="Generate Key:"/>
+            <Button Text="Generate Key" Command="{Binding NetherGenKeyCommand}" CommandParameter="this is a test parameter"/> 
+            <Label Text="Transaction:"/>
+            <Button Text="Sign &amp; Serialize Tx" Command="{Binding NetherTxCommand}" CommandParameter="this is a test parameter"/> 
+            <Label Text="PubKey:" FontAttributes="Bold"></Label>
+            <Label Text="{Binding EthPubKey}"/>
+            <Label Text="Public Address:" FontAttributes="Bold"></Label>
+            <Label Text="{Binding EthPubAddress}"/>
+            <Label Text="Private Key:" FontAttributes="Bold"></Label>
+            <Label Text="{Binding EthPrvKey}"/>
+            <Label Text="Transaction:" FontAttributes="Bold"></Label>
+            <Label Text="{Binding EthTransaction}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,8 +11,8 @@ using FFImageLoading.Forms.Droid;
 
 namespace HelixK1.Droid
 {
-    [Activity(Label = "HelixK1", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
-       ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "HelixK1.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", //MainLauncher = true => (LaunchActivity),
+               ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -23,7 +23,7 @@ namespace HelixK1.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            CachedImageRenderer.Init();
+            CachedImageRenderer.Init(true);
             CarouselViewRenderer.Init();
 
             LoadApplication(new App());
